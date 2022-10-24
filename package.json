@@ -1,0 +1,61 @@
+{
+  "name": "testcafe-accessibility",
+  "version": "1.0.0",
+  "main": "src/index",
+  "repository": "https://github.com/rafalsep/testcafe-accessibility",
+  "files": [
+    "src"
+  ],
+  "author": "Rafal Szczepankiewicz",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.js ./src --fix --cache",
+    "precommit-hook": "lint-staged --allow-empty",
+    "prepare": "husky install",
+    "test": "jest",
+    "test:e2e": "testcafe --config-file examples/.testcaferc.js chrome examples/index.js"
+  },
+  "engines": {
+    "npm": ">=8.5.5",
+    "node": ">=16.15.0"
+  },
+  "dependencies": {
+    "@testcafe-community/axe": "3.5.0",
+    "axe-html-reporter": "2.2.3"
+  },
+  "peerDependencies": {
+    "testcafe": "1.x || 2.x"
+  },
+  "devDependencies": {
+    "@babel/core": "7.19.6",
+    "@babel/eslint-parser": "7.19.1",
+    "eslint": "8.19.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-testcafe": "0.2.1",
+    "eslint-plugin-testcafe-extended": "0.2.0",
+    "husky": "8.0.1",
+    "jest": "28.1.2",
+    "lint-staged": "13.0.3",
+    "prettier": "2.7.1",
+    "testcafe": "2.x"
+  },
+  "keywords": [
+    "testcafe",
+    "accessibility"
+  ],
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint -c .eslintrc.js --fix --quiet",
+      "prettier --write"
+    ],
+    "*.{json}": [
+      "prettier --write"
+    ]
+  }
+}
